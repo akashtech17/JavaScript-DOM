@@ -263,16 +263,88 @@
 
 // innerHTML
 
-function createAlertViaTemplate(message){
-  const template= `<div class="alert">${message}</div>`;
- main.innerHTML+=template;
+// function createAlertViaTemplate(message){
+//   const template= `<div class="alert">${message}</div>`;
+//  main.innerHTML+=template;
 
 
-}
+// }
 
-createAlertViaTemplate("Hello This was Created by innerHTML")
+// createAlertViaTemplate("Hello This was Created by innerHTML")
+
 
 // /* ----------------------------------------------------------------------------------------------------------- */
+
+// 19 Document fragment For Performance
+
+// const foodContainerEl=document.getElementById("food-container");
+
+// // normal way 
+
+// console.time("normal")
+
+// for (let i=1;i<=500;i++){
+//   const li =document.createElement("li");
+//   li.textContent=`food item ${i}`;
+//   li.className='food-item';
+//   foodContainerEl.append(li);
+// }
+
+// console.timeEnd("normal")
+
+// // createDocumentFragment   Way
+
+// console.time('document Fragment')
+
+// let fragment=document.createDocumentFragment();
+// for (let i=1;i<=100;i++){
+//   const li =document.createElement("li");
+//   li.textContent=`food item ${i}`;
+//   li.className='food-item';
+//   fragment.append(li);
+// }
+
+// foodContainerEl.append(fragment);
+
+// console.timeEnd('document Fragment');
+
+/**  Challenge : Crate you favorite foods using  (createElement & document Fragment) */
+
+// const foodContainerE=document.getElementById("food-container");
+// const favoriteItemFood=[
+//   'Chicken Biryani',
+//   'Mutton Biryani',
+//   'Fish Biryani'
+// ];
+
+// const listFragment=document.createDocumentFragment();
+// favoriteItemFood.forEach((favfood)=>{
+//   let li =document.createElement("li");
+//   li.textContent=favfood;
+//   li.className="food-item";
+//   listFragment.append(li);
+// })
+
+// foodContainerE.append(listFragment)
+
+ /* ----------------------------------------------------------------------------------------------------------- */
+
+// 20 Inserting Dom Element
+
+const foodContainerEle=document.getElementById("food-container");
+
+const li=document.createElement("li");
+li.textContent="Biryani";
+li.className="food-item";
+
+// appending
+
+foodContainerEle.append(li); // puts data inside an element at the last index; while.
+foodContainerEle.prepend(li);  // puts the prepending element at the first index.
+
+
+/* ----------------------------------------------------------------------------------------------------------- */
+
 
 
 
