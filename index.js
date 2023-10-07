@@ -209,8 +209,8 @@
 //     // Append - before the function 
 //     // prepend -after the function 
     
-//     div.append(textNode);
-//     main.prepend(div)
+//     div.append(textNode); //puts data inside an element at the last index; while.
+//     main.prepend(div) // puts the prepending element at the first index.
     
 // };
 // creatingAlertViaDom("Food Updated")
@@ -243,6 +243,37 @@
 // alertEl.innerText="<strong>Successful</strong> update"
 // alertEl.innerContent="<strong>Successful</strong> update"
 // /* ----------------------------------------------------------------------------------------------------------- */
+
+// 18 innerHTML vs CreateElements
+
+// const main=document.getElementById("main");
+// function createAlertViaDom(message){
+//   const div=document.createElement("div");
+//   const textNode=document.createTextNode(message)
+
+//   // injecting TextNode into Div
+//   div.append(textNode); // puts data inside an element at the last index; while.
+//   div.className="alert";
+//   main.prepend(div); // puts the prepending element at the first index.
+
+
+// }
+
+// createAlertViaDom("hello is was create by CreateElement");
+
+// innerHTML
+
+function createAlertViaTemplate(message){
+  const template= `<div class="alert">${message}</div>`;
+ main.innerHTML+=template;
+
+
+}
+
+createAlertViaTemplate("Hello This was Created by innerHTML")
+
+// /* ----------------------------------------------------------------------------------------------------------- */
+
 
 
 
