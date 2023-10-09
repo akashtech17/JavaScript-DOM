@@ -440,40 +440,123 @@
 
 //25 Looping over the DOM
 
-const foodContainerElement=document.querySelector("#food-container li");
-const favouriteFood=[
-    'Chicken Biryani',
-     'Mutton Biryani',
-     'Fish Biryani'
-];
+// const foodContainerEl = document.querySelectorAll("#food-container li");
 
-//How to iterate/?
-// for loop
-for(let i=0;i<favouriteFood.length;i++){
-    console.log(favouriteFood[i]);
-}
+// const favouriteFood = [
+//   "Chicken Biriyani",
+//   "Mutton Biriyani",
+//   "Fish Biriyani",
+//   "Prawn Biriyani",
+// ];
 
-// for of
-for (const item of favouriteFood){
-    console.log(item);
-}
+// // How to iterate?
 
-//covert existing list into JavaScript array?
-const foodItem=[];
+// // for loop
+// for (let i = 0; i < favouriteFood.length; i++) {
+//   console.log(favouriteFood[i]);
+// }
 
-for (let i=0;i<foodContainerElement.length;i++){
-    // console.log(`"food"${foodContainerElement[i].innerText}`);
-    foodItem.push(foodContainerElement[i].innerText);
-}
+// // for..of
+// for (const item of favouriteFood) {
+//   console.log(item);
+// }
 
-console.log(foodItem);
+// // convert existing list into javascript array?
+// const foodItems = [];
 
-//Spread operator
-foodContainerElement.forEach((food)=>{
-    console.log("node lists",food);
-})
+// for (let i = 0; i < foodContainerEl.length; i++) {
+//   //   console.log(foodContainerEl[i].innerText);
+//   foodItems.push(foodContainerEl[i].innerText);
+// }
 
-[...foodContainerElement].forEach((food)=>{console.log("spread" ,food);})
+// console.log(foodItems);
+
+// // spread operator
+// foodContainerEl.forEach((food) => console.log("NodeLists", food));
+// [...foodContainerEl].forEach((food) => console.log("Spread", food));
+
+// // Array.from
+// Array.from(foodContainerEl).forEach((food) => console.log("Array.From", food));
+
+/* ----------------------------------------------------------------------------------------------------------- */
+
+// 26 finding Child Elements
+
+// const foodContainerElement=document.querySelector('#food-container');
+
+// const list=document.querySelectorAll('li');
+
+// // querySelectorAll :nodeList
+
+// console.log(list,list.length);
+
+// // .Children :HTML collections
+
+// console.log(foodContainerElement.children,foodContainerElement.children.length);
+
+// // childNodes :nodeList
+
+// console.log(foodContainerElement.childNodes);
+
+// // First / First ElementsChild
+// console.log(foodContainerElement.firstChild);
+// console.log(foodContainerElement.firstElementChild.innerText);
+
+// //last / lastElementChild
+// console.log(foodContainerElement.lastChild);
+// console.log(foodContainerElement.lastElementChild.innerText);
+
+// const header=document.querySelector("header");
+
+// // if you access the child which does't exist it will return null
+// console.log(header.firstElementChild);
+
+/* ----------------------------------------------------------------------------------------------------------- */
+
+// 27 Finding Parent Element
+
+// const foodContainerElements=document.querySelector("#food-container li");
+
+// // Finding parentNode
+// console.log(foodContainerElements.parentNode);
+
+// //finding ParentElement
+// console.log(foodContainerElements.parentElement.parentElement);
+
+// // returns <html>
+// console.log(document.body.parentNode);
+// console.log(document.body.parentElement);
+
+// // The document node
+// console.log(document.documentElement.parentNode);
+
+// //null
+// console.log(document.documentElement.parentElement);
+
+// //Checking nodeType
+// console.log(document.nodeType);
+
+// //Closest --// Match closet occurrence
+// console.log(foodContainerElements.closest("main"));
+
+/* ----------------------------------------------------------------------------------------------------------- */
+
+// // 28 finding sibling Elements
+// const numbers=document.querySelector("ul:last-Child li");
+
+// console.log(numbers.innerText);
+
+// //Any node :node
+
+// console.log(numbers.nextSibling);
+// console.log(numbers.parentElement);
+
+// //Any Element nodes :Elements
+
+// console.log(numbers.nextElementSibling.innerText);
+// console.log(numbers.previousElementSibling);
+
+/* ----------------------------------------------------------------------------------------------------------- */
 
 
 

@@ -81,11 +81,18 @@ main div input{
     color: #fff;
     padding: 5px;
     font-size: 14px;
-    border: 1px solid white;
+    border: 1px solid rgb(255, 255, 255);
     margin: 10px 0;    
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-left: 7px solid rgb(11, 233, 11);
     text-transform: capitalize;
     transition: 0.2s linear;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
 }
 .food-container .food-item:hover{
     background-color:#1b63ff;
@@ -108,4 +115,24 @@ main div input{
     background: transparent;
     border: none;
     color: #fff;
+}
+
+@media only screen and (max-width:480px) {
+    #main{
+        width: 300px;
+        margin: 20px auto;
+        text-align: center;
+       
+    }
+    header{
+    padding: 10px;
+    text-align: center;
+ 
+    background-color:#1b63ff;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+   
+    border-radius: 10px;
+}
 }
