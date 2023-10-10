@@ -558,6 +558,111 @@
 
 /* ----------------------------------------------------------------------------------------------------------- */
 
+// 29 Elements Properties VS HTML Attributes
+
+// const inputName=document.querySelector(".input-name-container input");
+// // console.log(inputName.value);
+// // you can get attributes  value by Dot Notation 
+// console.log(inputName.type);
+// console.log(inputName.id);
+// console.log(inputName.name);
+// console.log(inputName.placeholder);
+
+// const userAge=prompt("What is you age");
+
+// // modifying the value 
+// // inputName.value="Rdx";
+
+// inputName.setAttribute("value","Rajini");
+
+// inputName.setAttribute("value",userAge);
+// const saveInt = parseInt(inputName.value, 10);
+// console.log(typeof inputName.value);
+// console.log(typeof saveInt);
+
+// // however the web browser only convert the standard attributes to the DOM object's properties
+
+// console.log(inputName.isAlive);
+
+// //task :Create an input field of Age which accept number and change it via Dom using JavaScript
+
+// inputName.value=44;
+// console.log(`My age is : ${26}`);
+
+/* ----------------------------------------------------------------------------------------------------------- */
+
+// // 30 Setting & Getting HTML Attributes
+
+// const inputNames=document.querySelector(".input-name-container input");
+
+// //Setting the attribute
+
+// // Element.setAttribute("name", "fullName"); // Set the Attribute with Value
+
+// inputNames.setAttribute("value","Rajini")
+
+// const isAliveDom=inputNames.getAttribute('dataIsAlive');
+// const placeDom=inputNames.getAttribute("placeholder");
+
+// console.log(inputNames.attributes); // list all attribute of that element
+
+// console.log(inputNames.attributes[6].value); // attribute by index
+
+// // console.log(inputNames.attributes.place.value); // attributes by property name (DOT Notation)
+
+// // console.log(inputNames.attributes["interest"].value); // attributes by bracket notation
+// // console.log(isAliveDOM, placeDOM);
+
+// // methods
+
+// // check for attribute existence
+// console.log(inputNames.hasAttribute("age"));
+// //remove existing attribute 
+// console.log(inputNames.removeAttribute("data-is-alive"));
+
+// // return Css Style Declaration instead instead of value
+
+// //Data-* attribute 
+// // get data * value like this
+
+// // console.log(inputNames.dataset["interest"]);
+
+// // Converting String to Boolean
+
+// let warkingBoolean= inputNames.dataset.working=="true";
+// console.log(typeof warkingBoolean);
+
+// // // Task : Display all the Attributes Dynamically
+// // for(let attr of inputNames.attributes){
+// //   console.log(`${attr.name} is ${attr.value}`);
+// // }
+
+/* ----------------------------------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
