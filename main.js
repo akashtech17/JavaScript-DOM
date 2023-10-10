@@ -3,15 +3,56 @@ let inputBtn=document.getElementById("input-btn");
 let foodContainer=document.getElementById("food-container");
 
 inputBtn.addEventListener("click",()=>{
+    // creating li element
+let newFoodItemEl=document.createElement("li");
 
-    const li=document.createElement("li"); //step 1
-    const text=document.createTextNode(inputFood.value) // step 3
-    li.className="food-item"; // step 2
+let div=document.createElement("div"); // for list item
+let divBtn=document.createElement("div");
 
-    li.append(text); // step 4
+newFoodItemEl.append(div,divBtn);
 
-    foodContainer.append(li) // step 5
+// assigning textContent & className to newFoodItemEl
+
+div.textContent=inputFood.value;
+newFoodItemEl.className="food-item";
+
+divBtn.parentElement.setAttribute("onClick","removeFoodItem(event)");
+
+
+divBtn.innerHTML=`<i class="fa fa-xmark"></i>`;
+newFoodItemEl.append(divBtn);
+
+   // appending newly created element(newFoodItemEl) to foodContainer
+   foodContainer.append(newFoodItemEl);
+
+
+// resetting the input food value
+
+
+
+
+
+
+
+
+   
 })
+
+
+
+
+
+
+
+
+
+// remove food items
+function removeFoodItem(event){
+    const existingList=event.target.parentNode.parentNode;
+    // console.log("login event" ,event.target.parentNode.parentNode);
+    // new Way
+    existingList.remove()
+}
 
 
 
