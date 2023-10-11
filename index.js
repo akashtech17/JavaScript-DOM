@@ -639,6 +639,152 @@
 
 /* ----------------------------------------------------------------------------------------------------------- */
 
+// setting & getting inline Style
+
+// const inputN= document.querySelector(".input-name-container input");
+//  const btnEl=document.querySelector(".input-name-container button");
+
+//  // 1. set Attribute
+
+// //  btnEl.setAttribute("style","padding: 6px; margin:5px;");
+
+//  // 2. Direct Property access
+// //  console.log(btnEl.style.cssText);
+
+// //  btnEl.style.padding="6px 10px";
+// //  btnEl.style.fontSize="10px";
+// //  btnEl.style.backgroundColor ="#1b63ff";
+
+// // 3 .cssText
+// btnEl.style.cssText="padding:6px 10px;margin:5px;";
+
+// btnEl.style.cssText +="font-weight:bold;";
+// btnEl.style.cssText="background-color: #1b63ff";
+
+// // getting the style 
+
+// console.log(btnEl.style.backgroundColor);
+
+// //get Computed Style()
+// console.log(window.getComputedStyle(btnEl,":hover"));
+
+/* ----------------------------------------------------------------------------------------------------------- */
+
+// 32 Setting & Getting class Style 
+
+// const inputNs=document.querySelector(".input-name-container input");
+
+
+
+// // Get 
+// // console.log(inputNs.className);
+
+// //To overWrite Class Name
+// inputNs.setAttribute('class',"newClassName ")
+// // console.log(inputNs.className);
+// inputNs.className +=" newClassName2  newClassName3";
+
+// // console.log(inputNs.classList);
+
+// for(let cssClass of inputNs.classList ){
+//   console.log(cssClass);
+// }
+
+// // Manipulations
+
+// console.log(inputNs.classList.length);
+// inputNs.classList.add("5class");
+// console.log(inputNs.classList.contains("newClassName"));
+// console.log(inputNs.classList.replace("newClassName2","name2"));
+// inputNs.classList.remove("newClassName3");
+// console.log(inputNs.className);
+
+// setTimeout(() => {
+//   inputNs.classList.toggle("5class");
+// }, 5000);
+
+// // Task : Show div based on Click (toggle)
+
+// const inputContainer=document.querySelector(".input-name-container");
+// const showBtnEl=document.querySelector("#showBtn");
+
+// showBtnEl.addEventListener("click",()=>{
+
+//   if(inputContainer.style.display==="none"){
+//     showBtnEl.innerText="Hide Div"
+//     showBtnEl.style.backgroundColor="red";
+//     inputContainer.style.display="block";
+//   }
+
+//   else{
+//     inputContainer.style.display="none";
+//     showBtnEl.style.backgroundColor="royalblue"
+//     showBtnEl.innerText="show Div"
+//   }
+
+// });
+
+/* ----------------------------------------------------------------------------------------------------------- */
+
+// 34 Adding DOM Events & Event Object 
+
+// const creditBtnEl=document.querySelector("header button");
+
+//(X) Using HTML Attribute 
+// creditBtnEl.setAttribute("onclick",'alert("No")');
+
+//(X) DrawBacks -con't accept multiple action
+
+// creditBtnEl.onclick=function(){
+//   alert("no")
+// }
+
+// function handleAuthorInfo(){
+//   alert("this is i'm")
+// }
+// creditBtnEl.onclick=handleAuthorInfo();
+
+// Listen for Events using `AddEventListeners`
+// window.addEventListener()
+// document.addEventListener()
+// element.addEventListeners()
+
+// const handleCreditMsg=(event)=>{
+//   alert("java script Dom-RDX")
+//   console.log(event.target);
+//   alert(event.type + " at " + event.currentTarget.innerHTML);
+//   alert("Coordinates: " + event.clientX + ":" + event.clientY);
+// }
+// creditBtnEl.addEventListener("click",handleCreditMsg);
+// document.addEventListener("contextmenu",handleCreditMsg);
+
+/* ----------------------------------------------------------------------------------------------------------- */
+
+// 35 Removing DOM Events
+// const creditBtnEl = document.querySelector("header button");
+
+// const handleCreditMsg = (event) => {
+//   // alert("Javascript DOM - Anbuselvan");
+//   console.log("Event Happening");
+
+//   // removing
+//   // creditBtnEl.removeEventListener("click", handleCreditMsg);
+// };
+
+// // Adding an EventListener
+// creditBtnEl.addEventListener("click", handleCreditMsg, { once: true });
+
+/* ----------------------------------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
 
 
 
