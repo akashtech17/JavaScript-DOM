@@ -136,3 +136,47 @@ main div input{
     border-radius: 10px;
 }
 }
+
+
+/* <!-- Event Capturing & Event Bubbling --> */
+/* form {
+    background-color: white;
+    padding: 10px;
+}
+
+form,
+form * {
+    margin: 10px;
+    border: 1px solid rgb(46, 88, 213);
+    font-weight: bold;
+}
+
+form {
+    background: royalblue;
+}
+
+form div {
+    border: 1px solid green;
+    background-color: lightgreen;
+
+}
+
+form p {
+    border: 1px solid red;
+    background-color: rosybrown;
+} */
+
+
+form {
+    background-color: white;
+    padding: 10px;
+}
+
+form * {
+    margin: 5px;
+}
+
+form input {
+    padding: 5px 10px;
+    outline: none;
+}

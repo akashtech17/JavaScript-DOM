@@ -22,6 +22,7 @@ divBtn.parentElement.setAttribute("onClick","removeFoodItem(event)");
 divBtn.innerHTML=`<i class="fa fa-xmark"></i>`;
 newFoodItemEl.append(divBtn);
 
+
    // appending newly created element(newFoodItemEl) to foodContainer
    foodContainer.append(newFoodItemEl);
 
@@ -53,6 +54,4 @@ function removeFoodItem(event){
     // new Way
     existingList.remove()
 }
-
-
 

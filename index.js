@@ -30,7 +30,7 @@
 // // # History Obj
 // // history.back(); //- same as clicking back in the browser
 // // history.forward(); //- same as clicking forward in the browser
- 
+
 // // // # Navigator Obj
 // // navigator.appVersion;
 // // navigator.platform;
@@ -45,8 +45,8 @@
 // document.body.children[0].children[0].innerText="learn HTML DOM in JavaScript - Tamil🐛";
 
 // find the text in the document programmatically.
-/*console.log(window.find("HTML DOM")); */ 
- // SELECTING THE TEXT ON THE PAGE 
+/*console.log(window.find("HTML DOM")); */
+// SELECTING THE TEXT ON THE PAGE 
 
 //  /****************************************************************************/
 
@@ -92,7 +92,7 @@
 //        heading.innerHTML= `<h1>I have changed!</h1>`;
 //        console.log(`Image size ${image.offsetWidth} , ${image.offsetHeight}`);
 //  })
- 
+
 //  // When you can replace place the image . the image width  and image height is not showing .The solution for the problem is given below ... 
 
 //  window.addEventListener('load', () => {
@@ -112,7 +112,7 @@
 // window.onbeforeunload= function(){
 //     alert('You are about to be unloaded before.')
 // }
- 
+
 /****************************************************************************/
 
 // 10 Understanding DOM Node
@@ -120,7 +120,7 @@
 // HTML reference
 
 // console.dir(document.documentElement.lang); // find the html language 
- 
+
 // console.log(document.head); //showing the header items
 // console.log(document.body.innerText); // finding the body inner text 
 
@@ -201,7 +201,7 @@
 
 // function creatingAlertViaDom(message){
 //     const main=document.getElementById("main");
-    
+
 //     //Creating div Element
 //     const div=document.createElement("div")
 //     const textNode=document.createTextNode(message);
@@ -209,10 +209,10 @@
 //     div.className="alert";
 //     // Append - before the function 
 //     // prepend -after the function 
-    
+
 //     div.append(textNode); //puts data inside an element at the last index; while.
 //     main.prepend(div) // puts the prepending element at the first index.
-    
+
 // };
 // creatingAlertViaDom("Food Updated")
 
@@ -328,7 +328,7 @@
 
 // foodContainerE.append(listFragment)
 
- /* ----------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------- */
 
 // // 20 Inserting Dom Element
 
@@ -404,7 +404,7 @@
 // foodContainerEleme.replaceChildren(maagi,eggRice);
 
 /* ----------------------------------------------------------------------------------------------------------- */
- // 23 Cloning DOM Element
+// 23 Cloning DOM Element
 // const foodContainerElemen=document.querySelector('#food-container');
 //  let duplicate=document.getElementById("duplicate");
 //  let resuncBtn=document.getElementById("resuncBtn");
@@ -775,6 +775,231 @@
 // creditBtnEl.addEventListener("click", handleCreditMsg, { once: true });
 
 /* ----------------------------------------------------------------------------------------------------------- */
+// 36 Event Bubbling , Capturing & Preparation
+// const form1=document.querySelector("form");
+// const divEl=document.querySelector("form div");
+// const pEl=document.querySelector("form p");
+
+// form1.addEventListener("click", (event)=>{
+//   alert("Form");
+//   console.log(`Target: ${event.target.tagName}, This : ${form1.tagName}`);
+// });
+
+
+
+// divEl.addEventListener("click",(event)=>{
+//   alert('div')
+
+// // stop bubbling
+
+//   event.stopPropagation();
+
+//   // Removes all action event Listener
+//   event.stopImmediatePropagation();
+
+//   pEl.addEventListener("click",()=>{
+//     alert("p")
+//   })
+
+// });
+
+// To catch an event on the capturing Phase
+
+// form1.addEventListener("click", () => {}, { capture: true }); //by default False
+
+// Task : Catch the capturing & Bubbling Phrase
+// for (let elam of document.querySelectorAll("form, form *")){
+//   // capturing phase
+//   elam.addEventListener("click",()=>{
+//     console.log(`Capturing Phase : ${elam.tagName}`);
+
+
+//   },
+//   {capture:true}
+//   );
+
+//   // Bubbling phase
+
+//   elam.addEventListener("click",()=>{
+//     console.log(`Bubbling Phase : ${elam.tagName}`);
+//   });
+// }
+
+
+/* ----------------------------------------------------------------------------------------------------------- */
+
+// 37 Prevent Default Browser Actions
+
+// const formEl = document.querySelector("form");
+// const inputEl = document.querySelector("form input");
+// const checkboxEl = document.querySelector("form input[type='checkbox']");
+
+// formEl.addEventListener("submit", (event) => {
+//   event.preventDefault(); // Stops default behaviour
+
+//   // Task: Validate all input fields to respective rules ()
+//   if (
+//     inputEl.value != "" ||
+//     inputEl.value.length <= 3 ||
+//     inputEl.value.length > 20
+//   ) {
+//     alert("Validation Error: Name Invalid");
+//     return;
+//   }
+
+//   if (!checkboxEl.checked) {
+//     alert("Validation Error: Check the terms.");
+//     return;
+//   }
+
+//   console.log("Form Submitted", inputEl.value, checkboxEl.checked);
+
+//   console.log("DefaultPrevented:", event.defaultPrevented);
+// });
+
+/* ----------------------------------------------------------------------------------------------------------- */
+
+// 38 event delegation & dynamic Event
+
+//  const tableEl = document.querySelector("table");
+
+//  let selectedId;
+
+//  tableEl.addEventListener("click", (event) => {
+//    const target = event.target;
+//    const closestTr = target.closest("tr");
+
+//    if (target.tagName === "TH") return; // Ignoring TH element.
+
+//    if (selectedId != undefined) {
+//      selectedId.classList.remove("active"); // removing class
+//    }
+
+//    selectedId = closestTr;
+
+//    closestTr.classList.add("active");
+
+//    alert(`Hello ${closestTr.children[0].textContent}`);
+//  });
+
+//  // Task : show a donate page based on toggle
+
+//  document.addEventListener("click", (event) => {
+//   const id = event.target.dataset.toggleId;
+
+//   if (!id) return; // ignore all
+
+//   const el = document.getElementById(id);
+
+//   el.hidden = !el.hidden;
+// });
+
+// const formEl = document.querySelector("#donate-form");
+
+// formEl.addEventListener("submit", (event) => {
+//   event.preventDefault();
+
+//   const donateAmount = event.target.querySelector("input").value;
+
+//   alert(`Thank you for donating ₹${donateAmount}.`);
+// });
+
+
+/* ----------------------------------------------------------------------------------------------------------- */
+
+// 39 DOM Mouse Event
+
+//  document.addEventListener("mousedown", (event)=>{
+//   console.log("mousedown", event);
+//  })
+
+// document.addEventListener("mouseup",(event)=>{
+//   console.log("Mouse UP ",event);
+// })
+
+// document.addEventListener("mouseenter",(event)=>{
+//   console.log("MouseEntry");
+// })
+
+// document.addEventListener("mouseleave",(event)=>{
+//   console.log("MouseLeave");
+// })
+
+// document.addEventListener("mouseout",(event)=>{
+//   console.log("MouseOut");
+// })
+
+// document.addEventListener("mouseover",(event)=>{
+//   console.log("MouseOur");
+// })
+
+// document.addEventListener("click",(event)=>{
+//   console.log("click");
+// })
+
+// document.addEventListener("dblclick",(event)=>{
+//   console.log("dbClick");
+// })
+
+// Task : create on mouse tester app which should display respective message when that button is clicked 
+// document.addEventListener("mouseup", (event) => {
+//   switch (event.button) {
+//     case 1:
+//       alert("left Click")
+//       break;
+//     case 2:
+//       alert("Middle Click")
+//       break;
+//     case 3:
+//       alert("Right Click")
+//       break;
+
+//   }
+
+// });
+
+
+/* ----------------------------------------------------------------------------------------------------------- */
+
+// 40 DOM Keyboard Event
+
+// keyboard events
+// document.addEventListener("keydown",(event)=>{
+//   console.log("Keydown",event);
+// })
+
+// document.addEventListener("keyup",(event)=>{
+//   console.log(`Keyup: key: ${event.key}, code: ${event.code}`);
+//   console.log(event);
+// })
+
+
+// Task : Build a Simple typing test screen
+
+
+// document.addEventListener("keyup", (event) => {
+//   switch (event.key) {
+//     case "ArrowUp":
+//       alert("You have pressed ArrowUp Key");
+//       break;
+//     case "ArrowDown":
+//       alert("You have pressed ArrowDown Key");
+//       break;
+//     case "ArrowLeft":
+//       alert("You have pressed ArrowLeft Key");
+//       break;
+//     case "ArrowRight":
+//       alert("You have pressed ArrowRight Key");
+//       break;
+//     default:
+//       alert("Unknown key detected");
+//       break;
+//   }
+// });
+
+/* ----------------------------------------------------------------------------------------------------------- */
+
+
 
 
 
