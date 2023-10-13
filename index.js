@@ -999,13 +999,204 @@
 
 /* ----------------------------------------------------------------------------------------------------------- */
 
+  // // this code for feedback.html  
+  // // 41 Accessing Forms and Elements
+
+  // // const formEl= document.form[0]; // by index
+
+  // const formEle=document.forms.feedback;
+  
+
+  // // Get Elements From Form
+
+  // // const fullNameEl=form.element[0]; // or by index/bracket notation'
+
+  // const fullNameEl=formEle.elements.fullName;
+  // const typeEl=formEle.elements.type;
+  // const emailEl=formEle.elements.email;
+  // const devEl=formEle.elements.description;
+  // const termsEl=formEle.elements.terms;
 
 
+  // // const fullNameEl = form.fullName; // you can also do this 
+
+  // // object Destructing 
+  // const { fullName, type, email, desc, terms } = formEle.elements;
+
+  // console.log(fullName,type,email,desc,terms);
 
 
+  /* ----------------------------------------------------------------------------------------------------------- */
+    // 42 java script form submit and form data event   
+
+  // const formEl = document.forms.feedback;
+  // const btnEl = document.querySelector("form button");
+  
+  // const handleSubmit = (event) => {
+  //   event.preventDefault(); // Prevent default behaviour
+  
+  //   // construct a FormData object, which fires the formdata event
+  //   const formData = new FormData(formEl);
+  
+  //   // formdata gets modified by the formdata event
+  //   console.log("My API KEY IS: ", formData.get("api-key"));
+  // };
+  
+  // const handleFormData = (e) => {
+  //   console.log("form data fired!");
+  
+  //   const formData = e.formData;
+  
+  //   // useful methods
+  //   formData.append("api-key", "sadsadsadsadsadsa"); // append new key-value pairs
+  //   console.log([...formData.entries()]); // get entries
+  //   console.log([...formData.values()]); // get only values
+  //   console.log(formData.get("email")); // get individual form element's value
+  //   console.log(formData.getAll("type")); // returns an array of all the values by a key name
+  //   console.log(formData.has("gender")); // returns true if the FormData object contains a key name.
+  //   console.log([...formData.keys()]); // returns an iterator of all the keys.
+  //   formData.set("hobbies", "Learning new things"); //sets a new value for an existing key name
+  //   formData.delete("terms"); // deletes the key
+  //   console.log([...formData.values()]); //returns an iterator of all the values in the FormData object.
+  // };
+  
+  // formEl.addEventListener("submit", handleSubmit);
+  
+  // formEl.addEventListener("form data", handleFormData);
+ /* ----------------------------------------------------------------------------------------------------------- */
+
+//  // 43 Transforming HTML form Data to Server
+
+//   const formEl = document.forms.feedback;
+//   const btnEl = document.querySelector("form button");
+  
+//   const handleSubmit = (event) => {
+//     event.preventDefault();
+  
+//     const formData = new FormData(formEl);
+  
+//     // 1. QueryString: content-type: application/x-www-form-urlencoded
+//     // ?fullName=Tana+Stark&type=technical-support&email=wukoma%40mailinator.com&description=Doloremque+excepteur&terms=true
+//     const data = [...formData.entries()];
+  
+//     const dataString = data
+//       // .map((x) => `${encodeURIComponent(x[0])}=${encodeURIComponent(x[1])}`)
+//       .map(
+//         ([key, value]) =>
+//           `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+//       )
+//       .join("&"); // old way of doing
+  
+//     console.log("usingMap", dataString); //
+  
+//     const dataString2 = new URLSearchParams(formData).toString();
+  
+//     console.log("URLSearchParams", dataString2);
+  
+//     // 2. JSON
+//     const jsonData = JSON.stringify(Object.fromEntries(formData));
+  
+//     // Send to Backend
+//     console.log("JSON BODY", jsonData);
+//   };
+  
+//   formEl.addEventListener("submit", handleSubmit);
 
 
+ /* ----------------------------------------------------------------------------------------------------------- */
+  // 44 Posting Form Data Via Fetch API
 
+  // const formEl = document.forms.feedback;
+  // const btnEl = document.querySelector("form button");
+  
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  
+  //   const formData = new FormData(formEl);
+  
+  //   const jsonData = JSON.stringify(Object.fromEntries(formData));
+  
+  //   // Send to Backend
+  //   // 1. XMLHttpRequest
+  //   let xhr = new XMLHttpRequest();
+  //   xhr.open("GET", "https://reqres.in/api/users/2", true);
+  //   xhr.onload = function () {
+  //     const obj = JSON.parse(xhr.responseText);
+  //     document.getElementById("response").innerText = obj.data.first_name;
+  //   };
+  //   xhr.send();
+  
+  //   // 2. fetch(), axios()
+  //   fetch("https://reqres.in/api/users?page=2", {
+  //     method: "GET",
+  //     // headers: {
+  //     //   // 'Content-Type': 'application/x-www-form-urlencoded' // MIME
+  //     //   "Content-Type": "application/json", // MIME
+  //     // },
+  //     // body: jsonData,
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       document.getElementById("response").innerText = JSON.stringify(data.data);
+  //     });
+  // };
+  
+  // formEl.addEventListener("submit", handleSubmit);
+
+  /* ----------------------------------------------------------------------------------------------------------- */
+
+//   //45  Handling input form element
+
+//   const formEl = document.forms.feedback;
+// const nameEl = formEl.elements.fullName;
+
+// // Get Properties & Methods
+// console.log(nameEl);
+
+// // 1. Attributes
+// nameEl.value = "Anbu";
+// nameEl.disabled = true;
+// nameEl.readOnly = true;
+
+// // 2. Events
+// nameEl.addEventListener("focus", () => console.log("focused!"));
+// nameEl.addEventListener("blur", () => console.log("blur"));
+// nameEl.addEventListener("input", (e) =>
+//   console.log(`You have entered: ${e.target.value}`)
+// );
+// nameEl.addEventListener("change", (e) =>
+//   console.log(`Changed value: ${e.target.value}`)
+// );
+
+// // Other events
+// nameEl.addEventListener("cut", () => console.log("cut"));
+// nameEl.addEventListener("copy", () => {
+//   alert("You can't copy the values");
+// });
+// nameEl.addEventListener("paste", () => console.log("paste"));
+
+// // 3. Methods
+// nameEl.focus();
+// nameEl.blur();
+
+// const handleSubmit = (event) => {
+//   event.preventDefault();
+
+//   const formData = new FormData(formEl);
+// };
+
+// formEl.addEventListener("submit", handleSubmit);
+
+// // Task: Task: Create a One-way binding, when the name field changes, it should great like `Hello, {enteredInput} in real time.`
+
+// nameEl.addEventListener("change", (event) => {
+//   document.querySelector(
+//     "#nameGreet"
+//   ).innerText = `Hello ${event.target.value}, `;
+// });
+
+
+  /* ----------------------------------------------------------------------------------------------------------- */
 
 
 
